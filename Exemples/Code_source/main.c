@@ -2,7 +2,7 @@
 #include "libWin.c"
 
 int main() {
-    typedPrint("\nCeci est une demo de MatthLib.\n", "\033[0;37m", 70);
+    typedPrint("\nCeci est une demo de AstralLib.\n", "\033[0;37m", 70);
     Sleep(500);
     typedPrintNoReturn("Grace a elle on peut ", "\033[0;37m", 70);
     typedPrint("changer de couleur!!!", "\033[0;32m", 70);
