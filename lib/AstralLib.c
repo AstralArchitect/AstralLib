@@ -33,7 +33,7 @@ void sleep_ms(unsigned long milliseconds) {
 #include <string.h>
 #include <stdio.h>
 
-void typedPrint(char text[100], char color[11], int speed) {
+void typedPrint(char *text, char *color, int speed) {
     printf("%s", color);
     for(int i = 0; i < strlen(text); i++){
         printf("%c", text[i]);
@@ -43,5 +43,5 @@ void typedPrint(char text[100], char color[11], int speed) {
 
         sleep_ms(speed);
     }
-    printf("\n");
+    //printf("\n");
 }
