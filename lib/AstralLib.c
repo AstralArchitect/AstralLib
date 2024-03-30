@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../commandes_System/universallib.h"
+
 #ifdef _WIN32
 
 #include <windows.h>
@@ -8,19 +8,12 @@ void sleep_ms(DWORD milliseconds) {
     Sleep(milliseconds);
 }
 
-void clear() {
-    system("cls");
-}
+#elif _WIN64
 
-char *exePath() {
-    return "Win";
-}
+#include <windows.h>
 
-void execute(char path[30], char commande[16]) {
-    printf("\033[0;37m");
-    char exe[100];
-    sprintf(exe, "%s\\%s\\%s", path, exePath(), commande);
-    system(exe);
+void sleep_ms(DWORD milliseconds) {
+    Sleep(milliseconds);
 }
 
 #else
@@ -35,23 +28,6 @@ void sleep_ms(unsigned long milliseconds) {
 
     nanosleep(&ts, NULL);
 }
-
-void clear() {
-    system("clear");
-}
-
-char *exePath() {
-    return "Lin";
-}
-
-void execute(char path[30], char commande[16]) {
-    printf("\033[0;37m");
-    char exe[100];
-    sprintf(exe, "%s/%s/%s", path, exePath(), commande);
-    system(exe);
-}
-
-
 #endif
 
 #include <string.h>
